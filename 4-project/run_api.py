@@ -51,7 +51,7 @@ def train_model(req: TrainRequest):
 
 class PredictRequest(BaseModel):
     model: str  # gs://path/to/model.pkl
-    samples: List[dict]
+    samples: List[dict] 
     tweet: str
 
 
