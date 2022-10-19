@@ -15,10 +15,14 @@ import plotly.express as px
 st.title("Menthal Health App")
 st.markdown("This is a demo Streamlit app.")
 
-@st.cache(persist=True)
+@st.cache(persist=False)
 def load_data():
     #df = pd.read_csv("https://datahub.io/machine-learning/iris/r/iris.csv")
     df = pd.read_csv("model_predictions.csv", sep=";")
+    print(df.head())
+    df['user'] = df.source.str.split("/", 1).str[1]
+    df['date'] = pd.to_datetime(df.created_at)
+    df['day'] = df.date.dt.date
     return(df)
 
 
@@ -39,18 +43,21 @@ def run():
     #x_plot = st.sidebar.selectbox("Select X-axis Column For Scatter Plot",df.columns.to_list()[0:4],index=0)
     #y_plot = st.sidebar.selectbox("Select Y-axis Column For Scatter Plot",df.columns.to_list()[0:4],index=1)
     
-    
+    grouped = df.groupby([df.user, df.day, df.label]).count().reset_index()
     if disp_head=="Head":
-        st.dataframe(df.head())
+        st.dataframe(grouped.head())
     else:
         st.dataframe(df)
     #st.table(df)
     #st.write(df)
     
+    fig = px.scatter(grouped, x=grouped.day, y=grouped['id'], color="label",
+                 size='id', hover_data=['label'])
     
+
     #Scatter Plot
-    fig = px.scatter(df, x=df["sepallength"], y=df["sepalwidth"], color="class",
-                 size='petallength', hover_data=['petalwidth'])
+    #fig = px.scatter(df, x=df["tweets"], y=df["sepalwidth"], color="class",
+    #             size='petallength', hover_data=['petalwidth'])
     
     fig.update_layout({
                 'plot_bgcolor': 'rgba(0, 0, 0, 0)'})

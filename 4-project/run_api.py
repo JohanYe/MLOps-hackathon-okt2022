@@ -9,11 +9,21 @@ import pickle
 from google.cloud import storage
 from run_main import api_reddit, api_twitter
 import re
+import torch
+import numpy as np
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 
 FEATURES = "sepal_length  sepal_width  petal_length  petal_width".split()
-
+labels = {
+        0: "Anxiety",
+        1: "BPD",
+        2: "autism",
+        3: "bipolar",
+        4: "depression",
+        5: "mentalhealth",
+        6: "schizophrenia"
+}
 
 app = FastAPI()
 
@@ -64,9 +74,18 @@ def remove_emoji(string):
                            "]+", "", string)
 
 
+def twitter(output, accounts, limit=100):
+    tweets = []
+    for acc in accounts:
+        tweets += get_tweets(acc, limit)
+    df = tweets_to_df(tweets)
+    df.to_csv(output, index=False)
+
+    
+
 @app.post("/predict")
 def predict(req: PredictRequest):
-    twitter("output.csv", accounts=twitter_account, limit=100)
+    twitter("output.csv", accounts=req.accounts, limit=100)
     data = pd.read_csv("output.csv")
     data['cleaned_text'] = data['text'].apply(remove_hyperlink)
     data['cleaned_text'] = data['cleaned_text'].apply(remove_emoji)
@@ -86,6 +105,6 @@ def predict(req: PredictRequest):
     data['label'] = data['max_label'].map(labels)
     data['prob'] = softmax[:,list(torch.argmax(softmax, dim=1).numpy())][:,0]
     data = data[data['prob'] > 0.5].reset_index()
-    data.to_csv("model_predictions.csv")
+    data.to_csv("model_predictions.csv", sep=";")
     return data
 
