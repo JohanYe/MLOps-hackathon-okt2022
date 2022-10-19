@@ -28,25 +28,29 @@ def twitter(output, accounts, limit=100):
     df.to_csv(output, index=False)
 
 
-
 def predict(tweet):
     data = pd.read_csv("output.csv")
     tweets = data.text.values.tolist()
-    print(len(tweets))
-    #print(tweets[:5])
-    #print(type(tweets[0]))
 
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
-    inputs = tokenizer(tweets[:2], return_tensors="pt")
+    inputs = tokenizer(tweets, return_tensors="pt", padding=True)
     outputs = model(**inputs)
-    print(outputs.logits.shape)
     with torch.no_grad():
         softmax = torch.nn.functional.softmax(outputs.logits).squeeze()
-        
-    return {"prediction": labels[torch.argmax(softmax).item()],
-            "prob": softmax[torch.argmax(softmax).item()]
-            }
+    
+    print(torch.argmax(softmax, dim=1).shape)
+    print(softmax.shape)
+    print(softmax[torch.argmax(softmax, dim=1)].shape)
+    data['max_label'] = torch.argmax(softmax, dim=1).numpy()
+    #data['label'] = labels[data['max_label']]
+    data['label'] = data['max_label'].map(labels)
+    data['prob'] = softmax[torch.argmax(softmax, dim=1)]
+    print(data.tail())
+
+    #return {"prediction": labels[torch.argmax(softmax).item()],
+    #        "prob": softmax[torch.argmax(softmax).item()]
+    #        }
 
 
 
