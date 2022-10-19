@@ -1,0 +1,9 @@
+pandas
+seaborn
+sklearn
+google-cloud-storage
+gcsfs
+pydantic
+fastapi
+uvicorn
+transformers
