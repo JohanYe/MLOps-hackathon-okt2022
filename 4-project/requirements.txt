@@ -7,3 +7,9 @@ pydantic
 fastapi
 uvicorn
 transformers
+pyyaml
+praw
+tweepy==4.10.1
+click
+pandas-gbq
+functions-framework==3.*
