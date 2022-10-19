@@ -40,8 +40,7 @@ def predict(twitter_account):
     data['cleaned_text'].replace('', np.nan, inplace=True)
     data.dropna(subset=['cleaned_text'], inplace=True)
 
-    tweets = data.text.values.tolist()
-    tweets['text'].apply(find_hyperlink)
+    tweets = data.cleaned_text.values.tolist()
 
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
@@ -52,6 +51,7 @@ def predict(twitter_account):
     data['max_label'] = torch.argmax(softmax, dim=1).numpy()
     data['label'] = data['max_label'].map(labels)
     data['prob'] = softmax[:,list(torch.argmax(softmax, dim=1).numpy())][:,0]
+    data = data[data['prob'] > 0.5].reset_index()
     return data
 
 
