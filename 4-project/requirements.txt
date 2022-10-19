@@ -6,6 +6,7 @@ gcsfs
 pydantic
 fastapi
 uvicorn
+torch==1.9.0
 transformers
 pyyaml
 praw

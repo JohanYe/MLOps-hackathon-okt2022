@@ -99,9 +99,10 @@ def predict(req: PredictRequest):
 
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
-    inputs = tokenizer(tweets, return_tensors="pt", padding=True)
-    outputs = model(**inputs)
     with torch.no_grad():
+        inputs = tokenizer(tweets, return_tensors="pt", padding=True)
+        outputs = model(**inputs)
+    
         softmax = torch.nn.functional.softmax(outputs.logits).squeeze()
     data['max_label'] = torch.argmax(softmax, dim=1).numpy()
     data['label'] = data['max_label'].map(labels)
