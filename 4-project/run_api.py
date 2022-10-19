@@ -57,11 +57,15 @@ class PredictRequest(BaseModel):
 
 @app.post("/predict")
 def predict(req: PredictRequest):
-    model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172",
-                                                               use_auth_token=True)
-    tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172",
-                                              use_auth_token=True)
-    inputs = tokenizer(req.tweet, return_tensors="pt")
+    model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
+    tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
+    inputs = tokenizer(reg.tweet, return_tensors="pt")
     outputs = model(**inputs)
-    print(outputs)
-    return {"predictions": list(outputs)}
+    with torch.no_grad():
+        softmax = torch.nn.functional.softmax(outputs.logits).squeeze()
+        
+    return {"prediction": labels[torch.argmax(softmax).item()],
+            "prob": softmax[torch.argmax(softmax).item()]
+            }
+
+
