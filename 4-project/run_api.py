@@ -50,22 +50,23 @@ def train_model(req: TrainRequest):
 
 
 class PredictRequest(BaseModel):
-    model: str  # gs://path/to/model.pkl
-    samples: List[dict] 
-    tweet: str
+    accounts: List[dict] 
 
 
 @app.post("/predict")
 def predict(req: PredictRequest):
+    twitter("output.csv", accounts=req.accounts, limit=100)
+    data = pd.read_csv("output.csv")
+    tweets = data.text.values.tolist()
+
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
-    inputs = tokenizer(reg.tweet, return_tensors="pt")
+    inputs = tokenizer(tweets, return_tensors="pt", padding=True)
     outputs = model(**inputs)
     with torch.no_grad():
         softmax = torch.nn.functional.softmax(outputs.logits).squeeze()
-        
-    return {"prediction": labels[torch.argmax(softmax).item()],
-            "prob": softmax[torch.argmax(softmax).item()]
-            }
-
+    data['max_label'] = torch.argmax(softmax, dim=1).numpy()
+    data['label'] = data['max_label'].map(labels)
+    data['prob'] = softmax[:,list(torch.argmax(softmax, dim=1).numpy())][:,0]
+    return data
 
