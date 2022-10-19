@@ -52,12 +52,20 @@ def train_model(req: TrainRequest):
 class PredictRequest(BaseModel):
     accounts: List[dict] 
 
+def find_hyperlink(string):
+    return re.sub(r'(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)', "", string)
+
 
 @app.post("/predict")
 def predict(req: PredictRequest):
-    twitter("output.csv", accounts=req.accounts, limit=100)
+    twitter("output.csv", accounts=twitter_account, limit=100)
     data = pd.read_csv("output.csv")
+    data['cleaned_text'] = data['text'].apply(find_hyperlink)
+    data['cleaned_text'].replace('', np.nan, inplace=True)
+    data.dropna(subset=['cleaned_text'], inplace=True)
+
     tweets = data.text.values.tolist()
+    tweets['text'].apply(find_hyperlink)
 
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
