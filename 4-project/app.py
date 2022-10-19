@@ -20,11 +20,11 @@ def load_data():
     #df = pd.read_csv("https://datahub.io/machine-learning/iris/r/iris.csv")
     df = pd.read_csv("model_predictions.csv", sep=";")
     print(df.head())
+    df['prob'] = df.prob.astype(float)
     df['user'] = df.source.str.split("/", 1).str[1]
     df['date'] = pd.to_datetime(df.created_at)
     df['day'] = df.date.dt.date
     return(df)
-
 
 
 def run():
@@ -32,27 +32,38 @@ def run():
     st.subheader("Mental health indicator of famous people..")
     
     df = load_data()
-    
-    
-    disp_head = st.sidebar.radio('Select DataFrame Display Option:',('Head', 'All'),index=0)
-   
-    #Multi-Select
-    #sel_plot_cols = st.sidebar.multiselect("Select Columns For Scatter Plot",df.columns.to_list()[0:4],df.columns.to_list()[0:2])
-    
-    #Select Box
-    #x_plot = st.sidebar.selectbox("Select X-axis Column For Scatter Plot",df.columns.to_list()[0:4],index=0)
-    #y_plot = st.sidebar.selectbox("Select Y-axis Column For Scatter Plot",df.columns.to_list()[0:4],index=1)
+    plot_button = st.sidebar.radio('Plot:',('All','Depression', 'Anxiety','BPD','Autism','Bipolar','Mentalhealth','Schizophrenia'),index=0)
     
     grouped = df.groupby([df.user, df.day, df.label]).count().reset_index()
-    if disp_head=="Head":
-        st.dataframe(grouped.head())
+    grouped['Number of tweets'] = grouped.id
+
+    if plot_button !='All':
+        fig = px.scatter(grouped[grouped.label==plot_button.lower()], x="day", y='Number of tweets', color="user",
+                 size='id', hover_data=['user'], symbol='user', title=plot_button.capitalize())
     else:
-        st.dataframe(df)
+        fig = px.scatter(grouped, x=grouped.day, y=grouped['Number of tweets'], color="label",
+                 size='id', hover_data=['user'], symbol='user', title=plot_button.capitalize())
+
+    # CSS to inject contained in a string
+    hide_table_row_index = """
+                <style>
+                thead tr th:first-child {display:none}
+                tbody th {display:none}
+                </style>
+                """
+
+    # Inject CSS with Markdown
+    st.markdown(hide_table_row_index, unsafe_allow_html=True)
+
+    # Display a static table
     #st.table(df)
-    #st.write(df)
-    
-    fig = px.scatter(grouped, x=grouped.day, y=grouped['id'], color="label",
-                 size='id', hover_data=['label'])
+    if plot_button != 'All':
+        #st.dataframe(df[df.label==plot_button.lower()].sort_values(df[df.label==plot_button.lower()].prob).head(3))
+        #st.dataframe(df[df.label==plot_button.lower()].sort_values(by='prob',ascending=False)[['label','user','cleaned_text']].head(3))
+        st.table(df[df.label==plot_button.lower()].sort_values(by='prob',ascending=False)[['prob','label','user','cleaned_text']].head(3))
+    else:
+        #st.dataframe(df.sort_values(by='prob',ascending=False)[['prob','label','user','cleaned_text']].head(3))
+        st.table(df.sort_values(by='prob',ascending=False)[['prob','label','user','cleaned_text']].head(3))
     
 
     #Scatter Plot

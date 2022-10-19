@@ -60,7 +60,7 @@ def train_model(req: TrainRequest):
 
 
 class PredictRequest(BaseModel):
-    accounts: List[dict] 
+    accounts: List[str]
 
 def remove_hyperlink(string):
     return re.sub(r'(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)', "", string)
