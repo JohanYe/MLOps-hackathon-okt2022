@@ -12,6 +12,8 @@ import re
 import torch
 import numpy as np
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from logic import get_reddits, reddits_to_df, get_tweets, tweets_to_df
+
 
 
 FEATURES = "sepal_length  sepal_width  petal_length  petal_width".split()
