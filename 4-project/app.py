@@ -8,14 +8,14 @@ Created on Sat Feb 27 16:33:16 2021
 
 import streamlit as st
 import pandas as pd
-
+from test import predict
 import plotly.express as px
 
 
 st.title("Menthal Health App")
 st.markdown("This is a demo Streamlit app.")
 
-@st.cache(persist=False)
+#@st.cache(persist=False)
 def load_data():
     #df = pd.read_csv("https://datahub.io/machine-learning/iris/r/iris.csv")
     df = pd.read_csv("model_predictions.csv", sep=";")
@@ -26,12 +26,25 @@ def load_data():
     df['day'] = df.date.dt.date
     return(df)
 
+@st.cache(persist=True)
+def make_predict_request(twitter_handle):
+    print(twitter_handle)
+    if len(twitter_handle) == 0:
+        return
+    twitter_accounts = twitter_handle.split(",")
+    print(twitter_accounts)
+    predict(twitter_accounts)
+    load_data()
+
 
 def run():
     #st.subheader("Iris Data Loaded into a Pandas Dataframe.")
     st.subheader("Mental health indicator of famous people..")
     
+    twitter_handle = st.text_input(label='Twitter')
+    make_predict_request(twitter_handle)
     df = load_data()
+    
     plot_button = st.sidebar.radio('Plot:',('All','Depression', 'Anxiety','BPD','Autism','Bipolar','Mentalhealth','Schizophrenia'),index=0)
     
     grouped = df.groupby([df.user, df.day, df.label]).count().reset_index()
