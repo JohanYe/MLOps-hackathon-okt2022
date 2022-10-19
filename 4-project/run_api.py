@@ -86,5 +86,6 @@ def predict(req: PredictRequest):
     data['label'] = data['max_label'].map(labels)
     data['prob'] = softmax[:,list(torch.argmax(softmax, dim=1).numpy())][:,0]
     data = data[data['prob'] > 0.5].reset_index()
+    data.to_csv("model_predictions.csv")
     return data
 
