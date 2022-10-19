@@ -22,8 +22,16 @@ labels = {
         6: "schizophrenia"
 }
 
-def find_hyperlink(string):
+def remove_hyperlink(string):
     return re.sub(r'(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)', "", string)
+
+def remove_emoji(string):
+    return re.sub("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", "", string)
 
 def twitter(output, accounts, limit=100):
     tweets = []
@@ -36,7 +44,9 @@ def twitter(output, accounts, limit=100):
 def predict(twitter_account):
     twitter("output.csv", accounts=twitter_account, limit=100)
     data = pd.read_csv("output.csv")
-    data['cleaned_text'] = data['text'].apply(find_hyperlink)
+    data['cleaned_text'] = data['text'].apply(remove_hyperlink)
+    data['cleaned_text'] = data['cleaned_text'].apply(remove_emoji)
+    data['cleaned_text'] = data['cleaned_text'].str.strip()
     data['cleaned_text'].replace('', np.nan, inplace=True)
     data.dropna(subset=['cleaned_text'], inplace=True)
 
@@ -56,4 +66,4 @@ def predict(twitter_account):
 
 
 if __name__ == "__main__":
-    print(predict(twitter_account=['kanyewest','taylorswift13']))
+    print(predict(twitter_account=['kanyewest']))

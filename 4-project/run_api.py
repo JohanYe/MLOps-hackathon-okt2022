@@ -52,20 +52,29 @@ def train_model(req: TrainRequest):
 class PredictRequest(BaseModel):
     accounts: List[dict] 
 
-def find_hyperlink(string):
+def remove_hyperlink(string):
     return re.sub(r'(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)', "", string)
+
+def remove_emoji(string):
+    return re.sub("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", "", string)
 
 
 @app.post("/predict")
 def predict(req: PredictRequest):
     twitter("output.csv", accounts=twitter_account, limit=100)
     data = pd.read_csv("output.csv")
-    data['cleaned_text'] = data['text'].apply(find_hyperlink)
+    data['cleaned_text'] = data['text'].apply(remove_hyperlink)
+    data['cleaned_text'] = data['cleaned_text'].apply(remove_emoji)
+    data['cleaned_text'] = data['cleaned_text'].str.strip()
     data['cleaned_text'].replace('', np.nan, inplace=True)
     data.dropna(subset=['cleaned_text'], inplace=True)
 
-    tweets = data.text.values.tolist()
-    tweets['text'].apply(find_hyperlink)
+    tweets = data.cleaned_text.values.tolist()
 
     model = AutoModelForSequenceClassification.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
     tokenizer = AutoTokenizer.from_pretrained("rabiaqayyum/autotrain-mental-health-analysis-752423172")
