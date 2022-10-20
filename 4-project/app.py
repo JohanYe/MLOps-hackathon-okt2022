@@ -12,8 +12,8 @@ from test import predict
 import plotly.express as px
 
 
-st.title("Menthal Health App")
-st.markdown("This is a demo Streamlit app.")
+st.title("MentalHealth.IO")
+st.markdown("This is a demo of MentalHealth.IO app.")
 
 #@st.cache(persist=False)
 def load_data():
@@ -28,11 +28,9 @@ def load_data():
 
 @st.cache(persist=True)
 def make_predict_request(twitter_handle):
-    print(twitter_handle)
     if len(twitter_handle) == 0:
         return
     twitter_accounts = twitter_handle.split(",")
-    print(twitter_accounts)
     predict(twitter_accounts)
     load_data()
 
@@ -44,7 +42,7 @@ def run():
     twitter_handle = st.text_input(label='Twitter')
     make_predict_request(twitter_handle)
     df = load_data()
-    
+    df = df[df['user'] ==twitter_handle]
     plot_button = st.sidebar.radio('Plot:',('All','Depression', 'Anxiety','BPD','Autism','Bipolar','Mentalhealth','Schizophrenia'),index=0)
     
     grouped = df.groupby([df.user, df.day, df.label]).count().reset_index()

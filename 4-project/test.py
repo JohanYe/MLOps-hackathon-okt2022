@@ -33,17 +33,36 @@ def remove_emoji(string):
         u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
                            "]+", "", string)
 
+ALREADY_DOWNLOADED = []
+ALREADY_PREDICTED = []
 def twitter(output, accounts, limit=100):
     tweets = []
+    checked = []
     for acc in accounts:
-        tweets += get_tweets(acc, limit)
+        if acc not in ALREADY_DOWNLOADED:
+            tweets += get_tweets(acc, limit)
+            checked.append(acc)
+
     df = tweets_to_df(tweets)
-    df.to_csv(output, index=False)
+    if len(ALREADY_DOWNLOADED) == 0:
+        df.to_csv(output, index=False)
+    else:    
+        df.to_csv(output, mode='a', index=False, header=False)
+    
+    ALREADY_DOWNLOADED.extend(checked)
 
 
 def predict(twitter_account):
     twitter("output.csv", accounts=twitter_account, limit=100)
     data = pd.read_csv("output.csv")
+    data['user'] = data.source.str.split("/", 1).str[1]
+    #print(data['user'])
+    #print(data['user'] not in ALREADY_PREDICTED)
+    data = data[~data['user'].isin(ALREADY_PREDICTED)]
+    if len(data) == 0:
+        return
+    
+    
     data['cleaned_text'] = data['text'].apply(remove_hyperlink)
     data['cleaned_text'] = data['cleaned_text'].apply(remove_emoji)
     data['cleaned_text'] = data['cleaned_text'].str.strip()
@@ -62,7 +81,12 @@ def predict(twitter_account):
     data['label'] = data['max_label'].map(labels)
     data['prob'] = softmax[:,list(torch.argmax(softmax, dim=1).numpy())][:,0]
     #data = data[data['prob'] > 0.5].reset_index()
-    data.to_csv("model_predictions.csv", sep=";")
+
+    if len(ALREADY_PREDICTED) == 0:
+        data.to_csv("model_predictions.csv", sep=";", mode='a', index=False)
+    else:    
+        data.to_csv("model_predictions.csv", sep=";", mode='a', index=False, header=False)
+    ALREADY_PREDICTED.extend(data.user.unique())
     #return data
 
 

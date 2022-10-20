@@ -1,9 +1,178 @@
-;id;created_at;source;text;url;cleaned_text;max_label;label;prob
-0;1574424978971586560;2022-09-26 15:45:41+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: #Visuallocalization is crucial for many robotics applications! However, extreme viewpoint changes still challenge curr…;;RT @FrederikWarburg: #Visuallocalization is crucial for many robotics applications! However, extreme viewpoint changes still challenge curr…;2;autism;0.9064386
-1;1572264099689664512;2022-09-20 16:39:07+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: Our team is ready for Fall 2022! We also launched our LinkedIn page (https://t.co/6eg6qwihTg) so don't forget to follow us th…;linkedin.com/company/machin…;RT @mlsm_dtu: Our team is ready for Fall 2022! We also launched our LinkedIn page () so don't forget to follow us th…;4;depression;0.20961542
-2;1571053203118260225;2022-09-17 08:27:27+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: #Uncertainties should be deduced - not learned! In our #Neurips2022 📰, we develop a (1) post-hoc Laplacian autoencoder…;;RT @FrederikWarburg: #Uncertainties should be deduced - not learned! In our #Neurips2022 , we develop a (1) post-hoc Laplacian autoencoder…;5;mentalhealth;0.17720746
-3;1567595983390875653;2022-09-07 19:29:41+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: Autonomous vehicles will disrupt our society, but how do they work? What are the technological and ethical challenges?…;;RT @FrederikWarburg: Autonomous vehicles will disrupt our society, but how do they work? What are the technological and ethical challenges?…;2;autism;0.5152914
-4;1565607783642415104;2022-09-02 07:49:17+00:00;tweeter/FBoeHuttel;RT @felix_w_s: Less than a week to apply for our #PhDposition on #computervision and #roadsafety. The fully funded PhD will get a dual degr…;;RT @felix_w_s: Less than a week to apply for our #PhDposition on #computervision and #roadsafety. The fully funded PhD will get a dual degr…;2;autism;0.5450417
-5;1564977172334292992;2022-08-31 14:03:28+00:00;tweeter/FBoeHuttel;I'm coming home! 🇩🇰🇩🇰🇩🇰 The last 6 months just flew by me - with plenty of new friends, impressions, and experiences! It was my pleasure to experience @MIT 's magic. I'm also looking forward to returning to the @mlsm_dtu to continue my Ph.D. studies. #MachineLearning https://t.co/PROSwrsfIL;;I'm coming home!  The last 6 months just flew by me - with plenty of new friends, impressions, and experiences! It was my pleasure to experience @MIT 's magic. I'm also looking forward to returning to the @mlsm_dtu to continue my Ph.D. studies. #MachineLearning;6;schizophrenia;0.08426073
-6;1564270607696424960;2022-08-29 15:15:50+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: Last week, our group presented 4 papers at #trafikdage in Aalborg, Denmark. In addition, @camara421 organized a session about…;;RT @mlsm_dtu: Last week, our group presented 4 papers at #trafikdage in Aalborg, Denmark. In addition, @camara421 organized a session about…;4;depression;0.04592368
-7;1562423601181048832;2022-08-24 12:56:29+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: And that's a wrap! Our last talk at #trafikdage was about feasibility of detecting cyclists’ phone use with #ComputerVision b…;;RT @mlsm_dtu: And that's a wrap! Our last talk at #trafikdage was about feasibility of detecting cyclists’ phone use with #ComputerVision b…;2;autism;0.52234477
+id;created_at;source;text;url;user;cleaned_text;max_label;label;prob
+1574424978971586560;2022-09-26 15:45:41+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: #Visuallocalization is crucial for many robotics applications! However, extreme viewpoint changes still challenge curr…;;FBoeHuttel;RT @FrederikWarburg: #Visuallocalization is crucial for many robotics applications! However, extreme viewpoint changes still challenge curr…;2;autism;0.9064386
+1572264099689664512;2022-09-20 16:39:07+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: Our team is ready for Fall 2022! We also launched our LinkedIn page (https://t.co/6eg6qwihTg) so don't forget to follow us th…;linkedin.com/company/machin…;FBoeHuttel;RT @mlsm_dtu: Our team is ready for Fall 2022! We also launched our LinkedIn page () so don't forget to follow us th…;4;depression;0.20961542
+1571053203118260225;2022-09-17 08:27:27+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: #Uncertainties should be deduced - not learned! In our #Neurips2022 📰, we develop a (1) post-hoc Laplacian autoencoder…;;FBoeHuttel;RT @FrederikWarburg: #Uncertainties should be deduced - not learned! In our #Neurips2022 , we develop a (1) post-hoc Laplacian autoencoder…;5;mentalhealth;0.17720746
+1567595983390875653;2022-09-07 19:29:41+00:00;tweeter/FBoeHuttel;RT @FrederikWarburg: Autonomous vehicles will disrupt our society, but how do they work? What are the technological and ethical challenges?…;;FBoeHuttel;RT @FrederikWarburg: Autonomous vehicles will disrupt our society, but how do they work? What are the technological and ethical challenges?…;2;autism;0.5152914
+1565607783642415104;2022-09-02 07:49:17+00:00;tweeter/FBoeHuttel;RT @felix_w_s: Less than a week to apply for our #PhDposition on #computervision and #roadsafety. The fully funded PhD will get a dual degr…;;FBoeHuttel;RT @felix_w_s: Less than a week to apply for our #PhDposition on #computervision and #roadsafety. The fully funded PhD will get a dual degr…;2;autism;0.5450417
+1564977172334292992;2022-08-31 14:03:28+00:00;tweeter/FBoeHuttel;I'm coming home! 🇩🇰🇩🇰🇩🇰 The last 6 months just flew by me - with plenty of new friends, impressions, and experiences! It was my pleasure to experience @MIT 's magic. I'm also looking forward to returning to the @mlsm_dtu to continue my Ph.D. studies. #MachineLearning https://t.co/PROSwrsfIL;;FBoeHuttel;I'm coming home!  The last 6 months just flew by me - with plenty of new friends, impressions, and experiences! It was my pleasure to experience @MIT 's magic. I'm also looking forward to returning to the @mlsm_dtu to continue my Ph.D. studies. #MachineLearning;6;schizophrenia;0.08426073
+1564270607696424960;2022-08-29 15:15:50+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: Last week, our group presented 4 papers at #trafikdage in Aalborg, Denmark. In addition, @camara421 organized a session about…;;FBoeHuttel;RT @mlsm_dtu: Last week, our group presented 4 papers at #trafikdage in Aalborg, Denmark. In addition, @camara421 organized a session about…;4;depression;0.04592368
+1562423601181048832;2022-08-24 12:56:29+00:00;tweeter/FBoeHuttel;RT @mlsm_dtu: And that's a wrap! Our last talk at #trafikdage was about feasibility of detecting cyclists’ phone use with #ComputerVision b…;;FBoeHuttel;RT @mlsm_dtu: And that's a wrap! Our last talk at #trafikdage was about feasibility of detecting cyclists’ phone use with #ComputerVision b…;2;autism;0.52234477
+1583004448267255808;2022-10-20 07:57:25+00:00;tweeter/elonmusk;@marenkahnert @jasondebolt Exactly;;elonmusk;@marenkahnert @jasondebolt Exactly;4;depression;0.28310594
+1582997766741327873;2022-10-20 07:30:52+00:00;tweeter/elonmusk;@Teslarati @13ericralph31 SpaceX has more active satellites in orbit than rest of Earth combined, tracking to double rest of Earth soon;;elonmusk;@Teslarati @13ericralph31 SpaceX has more active satellites in orbit than rest of Earth combined, tracking to double rest of Earth soon;6;schizophrenia;0.07451401
+1582987988233256961;2022-10-20 06:52:01+00:00;tweeter/elonmusk;@jasondebolt The media reports with great fanfare my predictions that are late, but rarely those that come early;;elonmusk;@jasondebolt The media reports with great fanfare my predictions that are late, but rarely those that come early;0;Anxiety;0.16098207
+1582984673235697664;2022-10-20 06:38:51+00:00;tweeter/elonmusk;@jakebrowatzke @andyjayhawk 🤣;;elonmusk;@jakebrowatzke @andyjayhawk 🤣;4;depression;0.28049713
+1582902627745943552;2022-10-20 01:12:50+00:00;tweeter/elonmusk;"RT @Tesla: 10 years of Supercharging.
+
+46 countries.
+35k+ stalls.
+20 billion miles charged.
+
+🚘⚡️ https://t.co/m3H2Hry719";;elonmusk;"RT @Tesla: 10 years of Supercharging.
+
+46 countries.
+35k+ stalls.
+20 billion miles charged.
+
+⚡️";2;autism;0.12567002
+1582886876922249216;2022-10-20 00:10:14+00:00;tweeter/elonmusk;@Teslarati @JohnnaCrider1 Accelerating sustainable energy is our primary mission;;elonmusk;@Teslarati @JohnnaCrider1 Accelerating sustainable energy is our primary mission;3;bipolar;0.12470569
+1582862492111233024;2022-10-19 22:33:20+00:00;tweeter/elonmusk;@westcoastbill Will require truly exceptional execution, but it is possible;;elonmusk;@westcoastbill Will require truly exceptional execution, but it is possible;4;depression;0.46905878
+1582825479807340545;2022-10-19 20:06:16+00:00;tweeter/elonmusk;RT @Tesla: Q3 Earnings Call → https://t.co/shRnZSNR4C;livestream.tesla.com;elonmusk;RT @Tesla: Q3 Earnings Call →;3;bipolar;0.100478396
+1582825452556537857;2022-10-19 20:06:10+00:00;tweeter/elonmusk;RT @Tesla: Tesla Semi deliveries are scheduled to begin in December 2022 https://t.co/vCgifQ0HED;;elonmusk;RT @Tesla: Tesla Semi deliveries are scheduled to begin in December 2022;4;depression;0.22032265
+1582805523484680192;2022-10-19 18:46:58+00:00;tweeter/elonmusk;I will not let you down, no matter what it takes;;elonmusk;I will not let you down, no matter what it takes;4;depression;0.83197254
+1582797136839970817;2022-10-19 18:13:39+00:00;tweeter/elonmusk;@DirtyTesLa Awesome;;elonmusk;@DirtyTesLa Awesome;4;depression;0.4513976
+1582779309391228931;2022-10-19 17:02:48+00:00;tweeter/elonmusk;We even did a Starlink video call on one airplane aloft to Starlink on another, far away, airplane aloft and it worked perfectly with no lag!;;elonmusk;We even did a Starlink video call on one airplane aloft to Starlink on another, far away, airplane aloft and it worked perfectly with no lag!;2;autism;0.039700743
+1582778449583693836;2022-10-19 16:59:23+00:00;tweeter/elonmusk;Vox Populi Vox Dei;;elonmusk;Vox Populi Vox Dei;6;schizophrenia;0.074947864
+1582729657350180865;2022-10-19 13:45:30+00:00;tweeter/elonmusk;@chazman @aelluswamy Several major architectural upgrades in 10.69.3, so it’s much more than a point release, but we’re sticking with 10.69 just cause haha;;elonmusk;@chazman @aelluswamy Several major architectural upgrades in 10.69.3, so it’s much more than a point release, but we’re sticking with 10.69 just cause haha;4;depression;0.44288877
+1582592031712432128;2022-10-19 04:38:38+00:00;tweeter/elonmusk;@BillyM2k @atrupar Sounds fair;;elonmusk;@BillyM2k @atrupar Sounds fair;0;Anxiety;0.25275785
+1582582264185049088;2022-10-19 03:59:49+00:00;tweeter/elonmusk;@BillyM2k Definitely giving me kid naming ideas 🤣;;elonmusk;@BillyM2k Definitely giving me kid naming ideas 🤣;2;autism;0.11520023
+1582582042063093760;2022-10-19 03:58:56+00:00;tweeter/elonmusk;And … sold out!;;elonmusk;And … sold out!;4;depression;0.67170846
+1582576552797081607;2022-10-19 03:37:07+00:00;tweeter/elonmusk;Internet in airplanes will feel same as if you were accessing Internet at home! https://t.co/Mfl2ixYnJH;twitter.com/SpaceX/status/…;elonmusk;Internet in airplanes will feel same as if you were accessing Internet at home!;0;Anxiety;0.09162742
+1582547658039623680;2022-10-19 01:42:18+00:00;tweeter/elonmusk;"28,700 bottles of exquisite Burnt Hair perfume already sold! 
+
+Only 1,300 left of this unique, limited edition, collector’s item. https://t.co/Gh2Zg7B5qX";twitter.com/elonmusk/statu…;elonmusk;"28,700 bottles of exquisite Burnt Hair perfume already sold! 
+
+Only 1,300 left of this unique, limited edition, collector’s item.";1;BPD;0.22617128
+1582523854181670912;2022-10-19 00:07:43+00:00;tweeter/elonmusk;@cb_doge @alex_avoigt We’re working on it. Hope to release something next week.;;elonmusk;@cb_doge @alex_avoigt We’re working on it. Hope to release something next week.;4;depression;0.38151735
+1582523481345835008;2022-10-19 00:06:14+00:00;tweeter/elonmusk;"@alex_avoigt No money from DoD, but several other countries, orgs &amp; individuals are paying for ~11k/25k terminals (thanks!).
+
+SpaceX is losing ~$20M/month due to unpaid service &amp; costs related to enhanced security measures for cyberwar defense, but we’ll keep doing it (sigh).";;elonmusk;"@alex_avoigt No money from DoD, but several other countries, orgs &amp; individuals are paying for ~11k/25k terminals (thanks!).
+
+SpaceX is losing ~$20M/month due to unpaid service &amp; costs related to enhanced security measures for cyberwar defense, but we’ll keep doing it (sigh).";6;schizophrenia;0.20110649
+1582519649081573377;2022-10-18 23:51:00+00:00;tweeter/elonmusk;RT @SpaceX: SpaceX’s Rideshare program’s redesigned payload configuration offers more opportunities for smallsat providers to catch a ride…;;elonmusk;RT @SpaceX: SpaceX’s Rideshare program’s redesigned payload configuration offers more opportunities for smallsat providers to catch a ride…;2;autism;0.03529709
+1582468440664641536;2022-10-18 20:27:31+00:00;tweeter/elonmusk;"@atrupar Smart? Maybe. 
+Does dumb stuff? Definitely!";;elonmusk;"@atrupar Smart? Maybe. 
+Does dumb stuff? Definitely!";0;Anxiety;0.13396259
+1582449194014343168;2022-10-18 19:11:02+00:00;tweeter/elonmusk;@balajis True;;elonmusk;@balajis True;4;depression;0.43177497
+1582398374787321859;2022-10-18 15:49:06+00:00;tweeter/elonmusk;@HassanNatha https://t.co/jxA4stwf1d;babylonbee.com/news/meet-stev…;elonmusk;@HassanNatha;6;schizophrenia;0.174823
+1582397390715518977;2022-10-18 15:45:12+00:00;tweeter/elonmusk;@TonyadeVitti 🤣;;elonmusk;@TonyadeVitti 🤣;4;depression;0.40952274
+1582389037356023808;2022-10-18 15:12:00+00:00;tweeter/elonmusk;@520AlRihla Exactly;;elonmusk;@520AlRihla Exactly;4;depression;0.48727897
+1582387937660264448;2022-10-18 15:07:38+00:00;tweeter/elonmusk;@tesla4k 🤣;;elonmusk;@tesla4k 🤣;4;depression;0.45812643
+1582387823516487680;2022-10-18 15:07:11+00:00;tweeter/elonmusk;@larryronaldpar1 Should I make weapons? Ideally, not.;;elonmusk;@larryronaldpar1 Should I make weapons? Ideally, not.;4;depression;0.4288733
+1582386890006593536;2022-10-18 15:03:28+00:00;tweeter/elonmusk;@TeslaHype An easy prediction;;elonmusk;@TeslaHype An easy prediction;0;Anxiety;0.15760848
+1582379931983499264;2022-10-18 14:35:49+00:00;tweeter/elonmusk;"Drone War I
+https://t.co/erVME0CbbN";independent.co.uk/news/ap-ukrain…;elonmusk;Drone War I;6;schizophrenia;0.12082776
+1582359018164850691;2022-10-18 13:12:43+00:00;tweeter/elonmusk;@FLVoiceNews https://t.co/CCaYpontFG;;elonmusk;@FLVoiceNews;4;depression;0.391032
+1582252941050023937;2022-10-18 06:11:12+00:00;tweeter/elonmusk;@teslaownersSV (Actually) Smart Summon is almost done;;elonmusk;@teslaownersSV (Actually) Smart Summon is almost done;2;autism;0.010746901
+1582194537069694978;2022-10-18 02:19:08+00:00;tweeter/elonmusk;@Teslaconomics Yes;;elonmusk;@Teslaconomics Yes;2;autism;0.112956345
+1582187855723761664;2022-10-18 01:52:35+00:00;tweeter/elonmusk;@stoolpresidente I have a plan;;elonmusk;@stoolpresidente I have a plan;4;depression;0.5878334
+1582166395345068034;2022-10-18 00:27:18+00:00;tweeter/elonmusk;@TeslaAIBot @SpaceX @Tesla Thanks Optimus :);;elonmusk;@TeslaAIBot @SpaceX @Tesla Thanks Optimus :);2;autism;0.27352354
+1582098412501364736;2022-10-17 19:57:10+00:00;tweeter/elonmusk;@SawyerMerritt @SpaceX To be precise, 25,300 terminals were sent to Ukraine, but, at present, only 10,630 are paying for service;;elonmusk;@SawyerMerritt @SpaceX To be precise, 25,300 terminals were sent to Ukraine, but, at present, only 10,630 are paying for service;6;schizophrenia;0.12826355
+1582097354576265217;2022-10-17 19:52:57+00:00;tweeter/elonmusk;@SawyerMerritt @SpaceX SpaceX has already withdrawn its request for funding;;elonmusk;@SawyerMerritt @SpaceX SpaceX has already withdrawn its request for funding;4;depression;0.31729463
+1582009338675154944;2022-10-17 14:03:13+00:00;tweeter/elonmusk;"@starrski71 @RenataKonkoly @EvaFoxU @kadubai11 @spideycyp_155 Wrong analogy. America also had a humiliating withdrawal from Afghanistan. No one in America sees that country as part of America.
+
+Crimea *is* seen as a crucial part of Russia by Russia, much as Hawaii is seen as a crucial part of America.";;elonmusk;"@starrski71 @RenataKonkoly @EvaFoxU @kadubai11 @spideycyp_155 Wrong analogy. America also had a humiliating withdrawal from Afghanistan. No one in America sees that country as part of America.
+
+Crimea *is* seen as a crucial part of Russia by Russia, much as Hawaii is seen as a crucial part of America.";4;depression;0.4554015
+1582006549567807488;2022-10-17 13:52:08+00:00;tweeter/elonmusk;@EnjoyerFive 🎯🤣;;elonmusk;@EnjoyerFive 🤣;4;depression;0.5292477
+1582005725684899840;2022-10-17 13:48:51+00:00;tweeter/elonmusk;@PPathole @spideycyp_155 Probably not;;elonmusk;@PPathole @spideycyp_155 Probably not;4;depression;0.69660455
+1582005487775539200;2022-10-17 13:47:55+00:00;tweeter/elonmusk;@zerohedge Practice makes perfect …;;elonmusk;@zerohedge Practice makes perfect …;4;depression;0.43109143
+1582005061583978496;2022-10-17 13:46:13+00:00;tweeter/elonmusk;"@RenataKonkoly @EvaFoxU @kadubai11 @spideycyp_155 Russia has been punched in the nose and forced to retreat many times by Ukraine. 
+
+But what you don’t want to do is give Russia a choice of total, humiliating defeat or nukes – then the probability of them using nukes is high.";;elonmusk;"@RenataKonkoly @EvaFoxU @kadubai11 @spideycyp_155 Russia has been punched in the nose and forced to retreat many times by Ukraine. 
+
+But what you don’t want to do is give Russia a choice of total, humiliating defeat or nukes – then the probability of them using nukes is high.";0;Anxiety;0.34560224
+1582003887485382656;2022-10-17 13:41:33+00:00;tweeter/elonmusk;"@kadubai11 @spideycyp_155 Obviously many disagree with this logic, but what do they think is their probability of being wrong about WW3. 
+
+If they say 0%, they are utterly dangerous fools.";;elonmusk;"@kadubai11 @spideycyp_155 Obviously many disagree with this logic, but what do they think is their probability of being wrong about WW3. 
+
+If they say 0%, they are utterly dangerous fools.";0;Anxiety;0.094921336
+1582000986432106499;2022-10-17 13:30:01+00:00;tweeter/elonmusk;@kadubai11 @spideycyp_155 But, hey, look on the bright side! At least Russia doesn’t get Crimea in that scenario, so you can be comforted by that thought, while watching the mushroom clouds rise.;;elonmusk;@kadubai11 @spideycyp_155 But, hey, look on the bright side! At least Russia doesn’t get Crimea in that scenario, so you can be comforted by that thought, while watching the mushroom clouds rise.;4;depression;0.5995752
+1581999825339699201;2022-10-17 13:25:25+00:00;tweeter/elonmusk;@kadubai11 @spideycyp_155 If Russia faces destruction of their army and utter defeat by NATO, they will use nukes, then NATO will respond with nukes and civilization is over;;elonmusk;@kadubai11 @spideycyp_155 If Russia faces destruction of their army and utter defeat by NATO, they will use nukes, then NATO will respond with nukes and civilization is over;0;Anxiety;0.12355182
+1581997742821298176;2022-10-17 13:17:08+00:00;tweeter/elonmusk;"@spideycyp_155 Whether one likes it or not, Crimea is absolutely seen as a core part of Russia by Russia. 
+
+Crimea is also of critical national security importance to Russia, as it is their southern navy base.
+
+From their standpoint losing Crimea is like USA losing Hawaii &amp; Pearl Harbor.";;elonmusk;"@spideycyp_155 Whether one likes it or not, Crimea is absolutely seen as a core part of Russia by Russia. 
+
+Crimea is also of critical national security importance to Russia, as it is their southern navy base.
+
+From their standpoint losing Crimea is like USA losing Hawaii &amp; Pearl Harbor.";4;depression;0.4628816
+1581991797038817280;2022-10-17 12:53:31+00:00;tweeter/elonmusk;@hyiki22 @spideycyp_155 Exactly;;elonmusk;@hyiki22 @spideycyp_155 Exactly;4;depression;0.34670094
+1581989915491172353;2022-10-17 12:46:02+00:00;tweeter/elonmusk;"@spideycyp_155 If Russia is faced with the choice of losing Crimea or using battlefield nukes, they will choose the latter.
+
+We’ve already sanctioned/cutoff Russia in every possible way, so what more do they have left to lose? 
+
+If we nuke Russia back, they will nuke us and then we have WW3.";;elonmusk;"@spideycyp_155 If Russia is faced with the choice of losing Crimea or using battlefield nukes, they will choose the latter.
+
+We’ve already sanctioned/cutoff Russia in every possible way, so what more do they have left to lose? 
+
+If we nuke Russia back, they will nuke us and then we have WW3.";0;Anxiety;0.16806196
+1581986552246603776;2022-10-17 12:32:40+00:00;tweeter/elonmusk;Exceptionally well-said https://t.co/UT8fXG0MeF;twitter.com/DavidSacks/sta…;elonmusk;Exceptionally well-said;4;depression;0.3374873
+1581982054711193601;2022-10-17 12:14:48+00:00;tweeter/elonmusk;"@rhensing @keith_dorschner @teslaownersSV Standard (non-performance) 3 &amp; Y suspension in production now has improved comfort, without affecting handling";;elonmusk;"@rhensing @keith_dorschner @teslaownersSV Standard (non-performance) 3 &amp; Y suspension in production now has improved comfort, without affecting handling";2;autism;0.09841691
+1581976351073968128;2022-10-17 11:52:08+00:00;tweeter/elonmusk;"@DrKnowItAll16 @pirate3Guy @HSerunjogi Yeah, RV version is lower priority than standard version. 
+
+You should still see high speeds during off hours. Is that happening?
+
+As we add more satellites &amp; upgrade satellite technology, speeds in high user density locations should see significant increases.";;elonmusk;"@DrKnowItAll16 @pirate3Guy @HSerunjogi Yeah, RV version is lower priority than standard version. 
+
+You should still see high speeds during off hours. Is that happening?
+
+As we add more satellites &amp; upgrade satellite technology, speeds in high user density locations should see significant increases.";6;schizophrenia;0.08078846
+1581903277347999744;2022-10-17 07:01:46+00:00;tweeter/elonmusk;Ok, we will add a donate option to Starlink;;elonmusk;Ok, we will add a donate option to Starlink;4;depression;0.39404517
+1581903026348261377;2022-10-17 07:00:46+00:00;tweeter/elonmusk;@pirate3Guy @HSerunjogi That’s oddly low. Normally, much higher.;;elonmusk;@pirate3Guy @HSerunjogi That’s oddly low. Normally, much higher.;4;depression;0.54531115
+1581901615552155648;2022-10-17 06:55:10+00:00;tweeter/elonmusk;Are there others that want to donate Starlinks to places in need? https://t.co/M0ASMenMRD;twitter.com/hserunjogi/sta…;elonmusk;Are there others that want to donate Starlinks to places in need?;2;autism;0.2996822
+1581886234896797696;2022-10-17 05:54:03+00:00;tweeter/elonmusk;@HSerunjogi Ok;;elonmusk;@HSerunjogi Ok;4;depression;0.59841734
+1581885835926196224;2022-10-17 05:52:27+00:00;tweeter/elonmusk;@DogecoinNorway @moxie @ID_AA_Carmack 🤣 that’s happened to me many times;;elonmusk;@DogecoinNorway @moxie @ID_AA_Carmack 🤣 that’s happened to me many times;4;depression;0.3431308
+1581884630063796224;2022-10-17 05:47:40+00:00;tweeter/elonmusk;@moxie @ID_AA_Carmack A much quieter leaf blower is possible;;elonmusk;@moxie @ID_AA_Carmack A much quieter leaf blower is possible;4;depression;0.4414917
+1581765733582716930;2022-10-16 21:55:13+00:00;tweeter/elonmusk;@teslaownersSV This is harder than it sounds, but ok;;elonmusk;@teslaownersSV This is harder than it sounds, but ok;4;depression;0.5141417
+1581764872702132224;2022-10-16 21:51:48+00:00;tweeter/elonmusk;Deus X Machina;;elonmusk;Deus X Machina;6;schizophrenia;0.047838915
+1581743346153771008;2022-10-16 20:26:15+00:00;tweeter/elonmusk;@ChrisG_NSF We are proceeding very carefully. If there is a RUD on the pad, Starship progress will be set back by ~6 months.;;elonmusk;@ChrisG_NSF We are proceeding very carefully. If there is a RUD on the pad, Starship progress will be set back by ~6 months.;4;depression;0.263069
+1581671300984365056;2022-10-16 15:39:58+00:00;tweeter/elonmusk;@Rainmaker1973 Game over when (not if) Earth gets hit by an object of that size;;elonmusk;@Rainmaker1973 Game over when (not if) Earth gets hit by an object of that size;4;depression;0.46707797
+1581661713362919424;2022-10-16 15:01:52+00:00;tweeter/elonmusk;"@N_Schmid Ramen &gt;&gt; Lambos";;elonmusk;"@N_Schmid Ramen &gt;&gt; Lambos";6;schizophrenia;0.15826973
+1581661032405118978;2022-10-16 14:59:10+00:00;tweeter/elonmusk;@Rainmaker1973 Used a lot in rocketry;;elonmusk;@Rainmaker1973 Used a lot in rocketry;4;depression;0.4993738
+1581652738768654338;2022-10-16 14:26:13+00:00;tweeter/elonmusk;So true https://t.co/PwmxUVU2Fc;;elonmusk;So true;4;depression;0.71183944
+1581650420631367681;2022-10-16 14:17:00+00:00;tweeter/elonmusk;@Rainmaker1973 Every millipede has its millennia;;elonmusk;@Rainmaker1973 Every millipede has its millennia;4;depression;0.40598914
+1581649798209290242;2022-10-16 14:14:32+00:00;tweeter/elonmusk;@HardcoreHistory We should bring back their outfits;;elonmusk;@HardcoreHistory We should bring back their outfits;4;depression;0.42959794
+1581648878201208833;2022-10-16 14:10:52+00:00;tweeter/elonmusk;@karpathy Good thread;;elonmusk;@karpathy Good thread;4;depression;0.50436336
+1581514716890865664;2022-10-16 05:17:46+00:00;tweeter/elonmusk;Fancy a game of meme tennis? https://t.co/d9tqIlg7nB;;elonmusk;Fancy a game of meme tennis?;6;schizophrenia;0.27992898
+1581513703400570880;2022-10-16 05:13:44+00:00;tweeter/elonmusk;Buy Burnt Hair from a company that digs holes!;;elonmusk;Buy Burnt Hair from a company that digs holes!;4;depression;0.8249129
+1581510840536399872;2022-10-16 05:02:22+00:00;tweeter/elonmusk;@chicago_glenn I read this as goth clowns lonely;;elonmusk;@chicago_glenn I read this as goth clowns lonely;4;depression;0.8662418
+1581508126595244032;2022-10-16 04:51:35+00:00;tweeter/elonmusk;Did you hear about the dyslexic KBG agent – it’s pot secret!;;elonmusk;Did you hear about the dyslexic KBG agent – it’s pot secret!;6;schizophrenia;0.056400698
+1581507258235904000;2022-10-16 04:48:08+00:00;tweeter/elonmusk;@utamadush 🤣;;elonmusk;@utamadush 🤣;3;bipolar;0.20650709
+1581506733117431812;2022-10-16 04:46:02+00:00;tweeter/elonmusk;Venn diagram intersection of those two audiences is pretty small, I guess;;elonmusk;Venn diagram intersection of those two audiences is pretty small, I guess;6;schizophrenia;0.18961263
+1581506444310249475;2022-10-16 04:44:53+00:00;tweeter/elonmusk;Not as popular as I’d hoped (sigh);;elonmusk;Not as popular as I’d hoped (sigh);4;depression;0.8783504
+1581490395149926404;2022-10-16 03:41:07+00:00;tweeter/elonmusk;"Pitching my idea once again for a crossover of Das Boot &amp; Boss Baby.
+
+“Das Baby” – Hijinks on the high seas! https://t.co/FieRmSthp2";;elonmusk;"Pitching my idea once again for a crossover of Das Boot &amp; Boss Baby.
+
+“Das Baby” – Hijinks on the high seas!";3;bipolar;0.13693492
+1581488923209273344;2022-10-16 03:35:16+00:00;tweeter/elonmusk;@teslaownersSV @oldmordim Just a scratch, we can buff it out;;elonmusk;@teslaownersSV @oldmordim Just a scratch, we can buff it out;4;depression;0.3364325
+1581488036499496960;2022-10-16 03:31:45+00:00;tweeter/elonmusk;@oldmordim Mostly accurate;;elonmusk;@oldmordim Mostly accurate;4;depression;0.4294159
+1581486187310899201;2022-10-16 03:24:24+00:00;tweeter/elonmusk;The comments in this thread are a conspiracy theorist’s wet dream;;elonmusk;The comments in this thread are a conspiracy theorist’s wet dream;6;schizophrenia;0.03709885
+1581441473882443776;2022-10-16 00:26:43+00:00;tweeter/elonmusk;@EvaFoxU Yup;;elonmusk;@EvaFoxU Yup;4;depression;0.5020377
+1581430699986296832;2022-10-15 23:43:55+00:00;tweeter/elonmusk;@EvaFoxU 7 years ago;;elonmusk;@EvaFoxU 7 years ago;4;depression;0.5390652
+1581379103902470144;2022-10-15 20:18:53+00:00;tweeter/elonmusk;@FutureJurvetson @SpaceX Definitely one of the strangest meetings I’ve ever experienced. @adeoressi was there too.;;elonmusk;@FutureJurvetson @SpaceX Definitely one of the strangest meetings I’ve ever experienced. @adeoressi was there too.;4;depression;0.33318806
+1581378204841172992;2022-10-15 20:15:19+00:00;tweeter/elonmusk;@KimDotcom @Twitter I’m trying my hardest to de-escalate this situation and obviously failing;;elonmusk;@KimDotcom @Twitter I’m trying my hardest to de-escalate this situation and obviously failing;1;BPD;0.04395656
+1581372484762226690;2022-10-15 19:52:35+00:00;tweeter/elonmusk;@KimDotcom @Twitter Damned if you do, damned if you don’t, so … guess I’m just damned;;elonmusk;@KimDotcom @Twitter Damned if you do, damned if you don’t, so … guess I’m just damned;4;depression;0.9073727
+1581371571230285825;2022-10-15 19:48:57+00:00;tweeter/elonmusk;"@SawyerMerritt Starship &amp; next-gen Starlink satellites are key, but much risk lies ahead before those are working at scale";;elonmusk;"@SawyerMerritt Starship &amp; next-gen Starlink satellites are key, but much risk lies ahead before those are working at scale";0;Anxiety;0.246008
+1581368246019584001;2022-10-15 19:35:44+00:00;tweeter/elonmusk;@RaheemKassam The hilarious thing is you’re not wrong 🤣;;elonmusk;@RaheemKassam The hilarious thing is you’re not wrong 🤣;4;depression;0.5127612
+1581367292075470848;2022-10-15 19:31:57+00:00;tweeter/elonmusk;@EvaFoxU So it goes …;;elonmusk;@EvaFoxU So it goes …;4;depression;0.6723815
+1581348928934785026;2022-10-15 18:18:59+00:00;tweeter/elonmusk;@gainzy222 Fate loves irony;;elonmusk;@gainzy222 Fate loves irony;4;depression;0.48589924
+1581347686992998403;2022-10-15 18:14:03+00:00;tweeter/elonmusk;@DavidSacks Even so, we should still do good deeds;;elonmusk;@DavidSacks Even so, we should still do good deeds;4;depression;0.7833805
+1581345747777179651;2022-10-15 18:06:20+00:00;tweeter/elonmusk;"The hell with it … even though Starlink is still losing money &amp; other companies are getting billions of taxpayer $, we’ll just keep funding Ukraine govt for free";;elonmusk;"The hell with it … even though Starlink is still losing money &amp; other companies are getting billions of taxpayer $, we’ll just keep funding Ukraine govt for free";4;depression;0.40690413
+1581340120774426625;2022-10-15 17:43:59+00:00;tweeter/elonmusk;@Brian_J_Berger That dude is not just a “condition of anonymity” spineless coward, he’s also an ignorant fool. Starlink was directly requested by the Ukraine government, as it was the only thing that worked.;;elonmusk;@Brian_J_Berger That dude is not just a “condition of anonymity” spineless coward, he’s also an ignorant fool. Starlink was directly requested by the Ukraine government, as it was the only thing that worked.;4;depression;0.89736646
+1581333422575714304;2022-10-15 17:17:22+00:00;tweeter/elonmusk;@spideycyp_155 @PPathole @ashleevance It has required a lot of our resources. Going into super lockdown mode slows down new development progress, as we have to resist attacks from a sophisticated adversary actively at war.;;elonmusk;@spideycyp_155 @PPathole @ashleevance It has required a lot of our resources. Going into super lockdown mode slows down new development progress, as we have to resist attacks from a sophisticated adversary actively at war.;6;schizophrenia;0.076787084
+1581331242389499906;2022-10-15 17:08:42+00:00;tweeter/elonmusk;@ashleevance DoD provided about 3% of the Falcon 1 development cost. Appreciated, certainly, but should be seen in context.;;elonmusk;@ashleevance DoD provided about 3% of the Falcon 1 development cost. Appreciated, certainly, but should be seen in context.;4;depression;0.257743
+1581328221466787841;2022-10-15 16:56:42+00:00;tweeter/elonmusk;@PPathole @ashleevance Of course. And their signal jamming systems are also getting better.;;elonmusk;@PPathole @ashleevance Of course. And their signal jamming systems are also getting better.;4;depression;0.36329478
+1581323301304954881;2022-10-15 16:37:09+00:00;tweeter/elonmusk;@ashleevance The amount SpaceX is requesting for a major battlefield advantage is less than the cost of one new GPS satellite. Ironically, GPS doesn’t work on battlefields, as the signal is easy to jam, but Starlink does.;;elonmusk;@ashleevance The amount SpaceX is requesting for a major battlefield advantage is less than the cost of one new GPS satellite. Ironically, GPS doesn’t work on battlefields, as the signal is easy to jam, but Starlink does.;4;depression;0.26302335
+1581322383452880896;2022-10-15 16:33:30+00:00;tweeter/elonmusk;"@ajtourville Would be great if someday humanity stopped pointing nukes at itself that would destroy almost all life on Earth.
+
+In any given year, there is a chance above zero that they will be launched. We are now at the highest risk in 60 years.
+
+https://t.co/hSqNeYHNX1";nytimes.com/2022/10/06/wor…;elonmusk;"@ajtourville Would be great if someday humanity stopped pointing nukes at itself that would destroy almost all life on Earth.
+
+In any given year, there is a chance above zero that they will be launched. We are now at the highest risk in 60 years.";6;schizophrenia;0.09863034
+1581172066832699392;2022-10-15 06:36:12+00:00;tweeter/elonmusk;@WholeMarsBlog Curses, foiled again!;;elonmusk;@WholeMarsBlog Curses, foiled again!;4;depression;0.4107474
+1581165911196635136;2022-10-15 06:11:44+00:00;tweeter/elonmusk;RT @SpaceX: Deployment of Eutelsat HOTBIRD 13F confirmed https://t.co/R2t3PuOl8e;;elonmusk;RT @SpaceX: Deployment of Eutelsat HOTBIRD 13F confirmed;0;Anxiety;0.1648266
+1581165896017797120;2022-10-15 06:11:40+00:00;tweeter/elonmusk;RT @SpaceX: Falcon 9’s first stage has landed on the Just Read the Instructions droneship https://t.co/R4X0ClHlXk;;elonmusk;RT @SpaceX: Falcon 9’s first stage has landed on the Just Read the Instructions droneship;0;Anxiety;0.13531591
+1581165882105270272;2022-10-15 06:11:37+00:00;tweeter/elonmusk;RT @SpaceX: Liftoff! https://t.co/2aK8VZGm3l;;elonmusk;RT @SpaceX: Liftoff!;0;Anxiety;0.32164758
